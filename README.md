@@ -54,3 +54,4 @@ To start testing, follow below mentioned steps:
 
 Note: the actions.json file here has dummy HTTP end points. To get the actual end points, please reach out to someone from the team
 
+FYI - you can do a lot of things in actions using handlebars. see stuff like "add " in actions.json which is resolved in code in the file HandleBarsHelperRegistry
