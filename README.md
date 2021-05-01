@@ -16,11 +16,12 @@ ADD config/docker.yml docker.yml
 
 To the following for local:
 
-ADD config/local.yml docker.yml
+ADD config/local.yml config/docker.yml
 ```
 docker-compose build
 docker-compose up 
 ```
+^This might fail for the first time as maria db is getting setup and statesman will not be able to load it in time initially. Can try again after the first run fails and it should work
 
 Incase you have ports conflicting (8080, 8081, 8090, 34407, 35508 will be used by this app), ports are mentioned in the following files:
 ```
@@ -50,4 +51,6 @@ To start testing, follow below mentioned steps:
 4. Initiate a new workflow using "Trigger new workflow for given WorkflowTemplateId". Use the workflow template id obtained above. Copy the workflow id in the response. This is the actual workflow instance
 5. Trigger the workflow with expected data from "Trigger workflow" flow. The request body is available using "$.update" in transitions and using "dataObject.data" in actions. Workflow data is accessible using "$.data" in transitions and using "dataObject.data" in actions
 ```
+
+Note: the actions.json file here has dummy HTTP end points. To get the actual end points, please reach out to someone from the team
 
