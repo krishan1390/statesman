@@ -16,11 +16,12 @@ ADD config/docker.yml docker.yml
 
 To the following for local:
 
-ADD config/local.yml docker.yml
+ADD config/local.yml config/docker.yml
 ```
 docker-compose build
 docker-compose up 
 ```
+^This might fail for the first time as maria db is getting setup and statesman will not be able to load it in time initially. Can try again after the first run fails and it should work
 
 Incase you have ports conflicting (8080, 8081, 8090, 34407, 35508 will be used by this app), ports are mentioned in the following files:
 ```
